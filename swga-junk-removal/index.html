@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SWGA Junk Removal | We Haul It All — Southwest Georgia</title>
+<meta name="description" content="SWGA Junk Removal — fast, affordable junk removal, demolition, cleanouts and post-construction cleanup across Southwest Georgia. Call or text 229-205-7974 for a free quote.">
+<link rel="icon" href="images/logo_badge.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#15151a;
+    --charcoal:#232227;
+    --charcoal-2:#2c2b31;
+    --bone:#efece3;
+    --bone-dim:#c9c6bb;
+    --yellow:#f2b807;
+    --yellow-dim:#c99a08;
+    --rust:#c1440e;
+    --concrete:#8b897f;
+    --line: rgba(239,236,227,0.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--bone);
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-size:17px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
+  }
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Anton', sans-serif; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; line-height:1.02;}
+  .mono{font-family:'Space Mono', monospace;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--yellow);display:inline-block;}
+
+  /* ---------- Hazard stripe divider (signature element) ---------- */
+  .hazard{
+    height:26px;
+    background:repeating-linear-gradient(135deg, var(--yellow) 0 22px, var(--black) 22px 44px);
+    position:relative;
+  }
+  .hazard.thin{height:14px;}
+  .hazard-label{
+    position:relative;
+    background:var(--black);
+    overflow:hidden;
+    border-top:2px solid var(--yellow-dim);
+    border-bottom:2px solid var(--yellow-dim);
+  }
+  .hazard-label .track{
+    display:flex;
+    white-space:nowrap;
+    animation:scroll-left 26s linear infinite;
+  }
+  .hazard-label span{
+    font-family:'Anton', sans-serif;
+    font-size:15px;
+    letter-spacing:4px;
+    padding:10px 28px;
+    color:var(--yellow);
+    text-transform:uppercase;
+    display:inline-block;
+  }
+  .hazard-label span::after{content:"\2726"; margin-left:28px; color:var(--rust); font-size:12px;}
+  @keyframes scroll-left{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(21,21,26,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 24px;
+    max-width:1180px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{width:46px;height:46px;border-radius:50%; border:2px solid var(--yellow); object-fit:cover;}
+  .brand-name{font-family:'Anton',sans-serif; font-size:19px; letter-spacing:0.5px; line-height:1;}
+  .brand-name small{display:block; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:1.5px; color:var(--concrete); text-transform:uppercase; margin-top:3px; font-weight:400;}
+  .nav-links{display:flex; align-items:center; gap:28px;}
+  .nav-links a{font-size:14.5px; text-transform:uppercase; letter-spacing:1px; font-weight:600; color:var(--bone-dim); transition:color .2s;}
+  .nav-links a:hover{color:var(--yellow);}
+  .call-btn{
+    background:var(--yellow); color:var(--black); font-family:'Space Mono',monospace; font-weight:700;
+    padding:10px 18px; border-radius:3px; font-size:14.5px; letter-spacing:0.5px;
+    display:flex; align-items:center; gap:8px;
+    transition:transform .15s, background .15s;
+  }
+  .call-btn:hover{background:var(--bone); transform:translateY(-1px);}
+  .nav-toggle{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex; align-items:flex-end;
+    background:#000;
+    overflow:hidden;
+  }
+  .hero-img{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:60% 45%;
+    opacity:0.55;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(21,21,26,0.65) 0%, rgba(21,21,26,0.35) 35%, rgba(21,21,26,0.97) 92%);
+    z-index:1;
+  }
+  .hero-content{position:relative; z-index:2; padding:160px 0 64px;}
+  .hero h1{
+    font-size:clamp(56px, 11vw, 128px);
+    color:var(--bone);
+    margin-bottom:8px;
+  }
+  .hero h1 .accent{color:var(--yellow);}
+  .hero-sub{
+    max-width:520px;
+    font-size:20px;
+    color:var(--bone-dim);
+    margin:18px 0 34px;
+  }
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:16px; margin-bottom:44px;}
+  .btn-primary, .btn-ghost{
+    font-family:'Space Mono',monospace; font-weight:700; letter-spacing:0.5px;
+    padding:16px 26px; border-radius:3px; font-size:15px;
+    display:inline-flex; align-items:center; gap:10px;
+    transition:transform .15s, background .15s, border-color .15s;
+  }
+  .btn-primary{background:var(--yellow); color:var(--black);}
+  .btn-primary:hover{background:var(--bone); transform:translateY(-2px);}
+  .btn-ghost{border:2px solid var(--bone-dim); color:var(--bone);}
+  .btn-ghost:hover{border-color:var(--yellow); color:var(--yellow); transform:translateY(-2px);}
+  .hero-stats{
+    display:flex; gap:0; flex-wrap:wrap;
+    border-top:1px solid var(--line);
+    padding-top:26px;
+  }
+  .hero-stats div{padding-right:40px; margin-right:40px; border-right:1px solid var(--line);}
+  .hero-stats div:last-child{border-right:none;}
+  .hero-stats .num{font-family:'Anton',sans-serif; font-size:34px; color:var(--yellow); display:block;}
+  .hero-stats .lbl{font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--concrete); font-family:'Space Mono',monospace;}
+
+  /* ---------- Section basics ---------- */
+  section{padding:96px 0;}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(34px,5vw,52px); color:var(--bone);}
+  .section-head p{color:var(--bone-dim); font-size:18px; margin-top:14px;}
+
+  /* ---------- Services ---------- */
+  .services-section{background:var(--charcoal);}
+  .services-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--charcoal);
+    padding:34px 26px;
+    transition:background .2s;
+  }
+  .service-card:hover{background:var(--charcoal-2);}
+  .service-card .icon{width:44px;height:44px; margin-bottom:20px; color:var(--yellow);}
+  .service-card h3{font-family:'Barlow Semi Condensed',sans-serif; font-weight:700; font-size:19px; text-transform:none; letter-spacing:0; color:var(--bone); margin-bottom:8px;}
+  .service-card p{font-size:14.5px; color:var(--concrete);}
+
+  /* ---------- Why us ---------- */
+  .why-section{
+    display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+  }
+  .why-img-wrap{position:relative;}
+  .why-img-wrap img{border-radius:4px; width:100%; height:460px; object-fit:cover;}
+  .why-tag{
+    position:absolute; bottom:-1px; left:-1px;
+    background:var(--yellow); color:var(--black);
+    font-family:'Anton',sans-serif; font-size:15px; letter-spacing:1px;
+    padding:12px 20px;
+  }
+  .why-list{list-style:none; margin-top:30px;}
+  .why-list li{
+    display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--line);
+  }
+  .why-list li:last-child{border-bottom:1px solid var(--line);}
+  .why-list .num{font-family:'Space Mono',monospace; color:var(--yellow); font-size:14px; padding-top:2px;}
+  .why-list h4{font-family:'Barlow Semi Condensed',sans-serif; font-weight:700; font-size:19px; color:var(--bone); margin-bottom:4px;}
+  .why-list p{font-size:14.5px; color:var(--concrete);}
+
+  /* ---------- Gallery ---------- */
+  .gallery-section{background:var(--charcoal);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    grid-auto-rows:150px;
+    gap:6px;
+  }
+  .gallery-grid figure{
+    position:relative; overflow:hidden; border-radius:3px; background:#000;
+  }
+  .gallery-grid img{width:100%;height:100%;object-fit:cover; transition:transform .5s ease;}
+  .gallery-grid figure:hover img{transform:scale(1.06);}
+  .gallery-grid figcaption{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:10px 12px 8px;
+    font-family:'Space Mono',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase;
+    color:var(--bone);
+    background:linear-gradient(0deg, rgba(0,0,0,0.85), transparent);
+  }
+  .g1{grid-column:span 3; grid-row:span 2;}
+  .g2{grid-column:span 3; grid-row:span 2;}
+  .g3{grid-column:span 2;}
+  .g4{grid-column:span 2;}
+  .g5{grid-column:span 2;}
+  .g6{grid-column:span 3;}
+  .g7{grid-column:span 3;}
+
+  /* ---------- Process ---------- */
+  .process-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:36px;
+  }
+  .process-card{border-top:3px solid var(--yellow); padding-top:22px;}
+  .process-num{font-family:'Anton',sans-serif; font-size:52px; color:var(--charcoal-2); -webkit-text-stroke:1.5px var(--yellow); display:block; margin-bottom:14px;}
+  .process-card h3{font-family:'Barlow Semi Condensed',sans-serif; text-transform:none; letter-spacing:0; font-weight:700; font-size:22px; color:var(--bone); margin-bottom:10px;}
+  .process-card p{color:var(--concrete); font-size:15px;}
+
+  /* ---------- Service area ---------- */
+  .area-section{background:var(--charcoal); }
+  .area-inner{display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;}
+  .county-list{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;}
+  .county-list span{
+    font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.5px;
+    border:1px solid var(--line); padding:8px 14px; border-radius:3px; color:var(--bone-dim);
+  }
+  .map-box{
+    border:1px solid var(--line); border-radius:4px; padding:40px 30px;
+    background:radial-gradient(circle at 30% 20%, rgba(242,184,7,0.08), transparent 60%), var(--black);
+    position:relative; min-height:340px;
+    display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
+  }
+  .map-box .pin{width:54px;height:54px; color:var(--yellow); margin-bottom:18px;}
+  .map-box h3{font-size:26px; color:var(--bone); margin-bottom:8px;}
+  .map-box p{color:var(--concrete); font-size:15px; max-width:280px;}
+
+  /* ---------- CTA / Contact ---------- */
+  .cta-section{
+    background:var(--black);
+    text-align:center;
+    padding:110px 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-section h2{font-size:clamp(38px,7vw,72px); color:var(--bone); margin-bottom:18px;}
+  .cta-section p{color:var(--bone-dim); font-size:19px; max-width:520px; margin:0 auto 40px;}
+  .cta-phone{
+    font-family:'Space Mono',monospace; font-weight:700;
+    font-size:clamp(34px,6vw,56px);
+    color:var(--yellow);
+    display:inline-block;
+    border-bottom:3px solid var(--yellow);
+    padding-bottom:6px;
+    margin-bottom:44px;
+    letter-spacing:1px;
+  }
+  .cta-ctas{display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
+
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:60px;
+    padding-top:90px; border-top:1px solid var(--line); margin-top:90px;
+  }
+  .contact-info h3{font-size:30px; color:var(--bone); margin-bottom:22px;}
+  .info-row{display:flex; gap:16px; align-items:flex-start; padding:16px 0; border-top:1px solid var(--line);}
+  .info-row:last-child{border-bottom:1px solid var(--line);}
+  .info-row .ic{width:22px;height:22px; color:var(--yellow); flex-shrink:0; margin-top:2px;}
+  .info-row a, .info-row span{font-size:16px; color:var(--bone-dim);}
+  .info-row a:hover{color:var(--yellow);}
+
+  form{display:flex; flex-direction:column; gap:14px;}
+  form label{font-family:'Space Mono',monospace; font-size:11.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--concrete); margin-bottom:6px; display:block;}
+  form input, form select, form textarea{
+    width:100%; background:var(--charcoal); border:1px solid var(--line); color:var(--bone);
+    padding:14px 14px; border-radius:3px; font-family:'Barlow Semi Condensed',sans-serif; font-size:16px;
+  }
+  form input:focus, form select:focus, form textarea:focus{outline:2px solid var(--yellow); border-color:var(--yellow);}
+  form textarea{resize:vertical; min-height:100px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .submit-btn{
+    background:var(--yellow); color:var(--black); font-family:'Space Mono',monospace; font-weight:700;
+    padding:16px; border:none; border-radius:3px; font-size:15px; letter-spacing:0.5px; cursor:pointer;
+    margin-top:8px; transition:background .15s, transform .15s;
+  }
+  .submit-btn:hover{background:var(--bone); transform:translateY(-2px);}
+  .form-note{font-size:13px; color:var(--concrete); margin-top:4px;}
+  .form-success{display:none; background:var(--charcoal); border:1px solid var(--yellow); border-radius:3px; padding:18px; font-size:15px; color:var(--bone);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--black); border-top:1px solid var(--line); padding:44px 0 30px;}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;}
+  .footer-brand{display:flex; align-items:center; gap:12px;}
+  .footer-brand img{width:38px;height:38px;border-radius:50%; border:1.5px solid var(--yellow); object-fit:cover;}
+  .footer-links{display:flex; gap:24px; flex-wrap:wrap;}
+  .footer-links a{font-size:13.5px; color:var(--concrete); text-transform:uppercase; letter-spacing:1px;}
+  .footer-links a:hover{color:var(--yellow);}
+  .footer-copy{font-size:12.5px; color:var(--concrete); font-family:'Space Mono',monospace; margin-top:22px; text-align:center;}
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .sticky-call{
+    display:none;
+    position:fixed; bottom:0; left:0; right:0; z-index:99;
+    background:var(--yellow); color:var(--black);
+    padding:14px 20px; text-align:center;
+    font-family:'Space Mono',monospace; font-weight:700; font-size:16px; letter-spacing:0.5px;
+    align-items:center; justify-content:center; gap:10px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .nav-links{display:none;}
+    .why-section, .area-inner, .contact-grid{grid-template-columns:1fr; gap:40px;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .process-grid{grid-template-columns:1fr; gap:44px;}
+    .form-row{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:170px;}
+    .g1,.g2,.g3,.g4,.g5,.g6,.g7{grid-column:span 2; grid-row:span 1;}
+    .g1,.g2{grid-row:span 2;}
+    .sticky-call{display:flex;}
+    body{padding-bottom:56px;}
+    .hero-stats div{margin-right:24px; padding-right:24px;}
+  }
+  @media (max-width:520px){
+    .services-grid{grid-template-columns:1fr;}
+    .hero-stats{gap:10px;}
+    .hero-stats div{margin-right:16px; padding-right:16px;}
+    .hero-stats .num{font-size:26px;}
+    .gallery-grid{grid-template-columns:1fr;}
+    .g1,.g2,.g3,.g4,.g5,.g6,.g7{grid-column:span 1; grid-row:span 1; height:220px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <img src="images/logo_badge.jpg" alt="SWGA Junk Removal logo">
+      <span class="brand-name">SWGA JUNK REMOVAL<small>Demo &middot; Cleanouts &middot; Hauling</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Work</a>
+      <a href="#process">Process</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="tel:2292057974" class="call-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      229-205-7974
+    </a>
+  </nav>
+</header>
+
+<div class="sticky-call">
+  <a href="tel:2292057974" style="display:flex;align-items:center;gap:8px;">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    CALL OR TEXT 229-205-7974 &mdash; FREE QUOTE
+  </a>
+</div>
+
+<div id="top"></div>
+<section class="hero">
+  <img src="images/truck_washbay.jpg" alt="SWGA Junk Removal truck loaded with a dump trailer" class="hero-img">
+  <div class="hero-content wrap">
+    <div class="eyebrow">Southwest Georgia &middot; Locally Owned</div>
+    <h1>WE HAUL<br><span class="accent">IT ALL.</span></h1>
+    <p class="hero-sub">Furniture, appliances, yard debris, construction waste, full demo &amp; cleanouts &mdash; gone same day. We do the heavy lifting so you don't have to.</p>
+    <div class="hero-ctas">
+      <a href="tel:2292057974" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call or Text 229-205-7974
+      </a>
+      <a href="#contact" class="btn-ghost">Get a Free Quote</a>
+    </div>
+    <div class="hero-stats">
+      <div><span class="num">Same-Day</span><span class="lbl">Service Available</span></div>
+      <div><span class="num">100%</span><span class="lbl">Free Estimates</span></div>
+      <div><span class="num">SWGA</span><span class="lbl">Locally Owned</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="hazard"></div>
+<div class="hazard-label">
+  <div class="track">
+    <span>FURNITURE</span><span>APPLIANCES</span><span>YARD DEBRIS</span><span>CONSTRUCTION DEBRIS</span><span>DEMO</span><span>CLEANOUTS</span><span>PROPERTY CLEANUP</span>
+    <span>FURNITURE</span><span>APPLIANCES</span><span>YARD DEBRIS</span><span>CONSTRUCTION DEBRIS</span><span>DEMO</span><span>CLEANOUTS</span><span>PROPERTY CLEANUP</span>
+  </div>
+</div>
+<div class="hazard"></div>
+
+<section class="services-section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What we haul</div>
+      <h2>If it's heavy,<br>we've got it.</h2>
+      <p>From a single couch to a whole property teardown — one call clears it out.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M4 18h16v2H4z"/><path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg>
+        <h3>Furniture Removal</h3>
+        <p>Couches, mattresses, tables — carried out, no lifting required on your end.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="2" width="12" height="20" rx="1"/><line x1="6" y1="10" x2="18" y2="10"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="9" y1="14" x2="9" y2="14.01"/></svg>
+        <h3>Appliance Removal</h3>
+        <p>Fridges, washers, dryers, water heaters — hauled and disposed of properly.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22c4-2 7-6 7-11a7 7 0 0 0-14 0c0 5 3 9 7 11z"/><path d="M12 15v-3"/></svg>
+        <h3>Yard Debris</h3>
+        <p>Branches, brush, storm cleanup and landscaping waste cleared fast.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l7-7"/><path d="M8 21l-5-5 8-8 5 5z"/><path d="M13 8l6-6 3 3-6 6"/></svg>
+        <h3>Construction Debris</h3>
+        <p>Job site scraps, drywall, lumber, and remodel leftovers gone same day.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-6 9 6"/><path d="M4 10v10h16V10"/><path d="M9 21v-6h6v6"/><line x1="2" y1="21" x2="22" y2="21"/></svg>
+        <h3>Demolition</h3>
+        <p>Sheds, decks, interior teardowns and small structure demo.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        <h3>Property Cleanouts</h3>
+        <p>Estate, rental, garage or attic cleanouts — top to bottom.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
+        <h3>Post-Construction Cleanup</h3>
+        <p>We clear the mess so your finished space is move-in ready.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+        <h3>Fast, Free Estimates</h3>
+        <p>Text a photo or have us come by — quotes with no obligation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section wrap" id="why">
+  <div class="why-img-wrap">
+    <img src="images/lot_truck.jpg" alt="SWGA Junk Removal dump trailer loaded and ready for haul off">
+    <div class="why-tag">READY TO ROLL</div>
+  </div>
+  <div>
+    <div class="eyebrow">Why SWGA</div>
+    <h2 style="font-size:clamp(30px,4vw,44px); color:var(--bone);">Local guys.<br>Heavy trailers.<br>No excuses.</h2>
+    <ul class="why-list">
+      <li>
+        <span class="num">01</span>
+        <div><h4>Fast Service</h4><p>Most jobs scheduled within a day or two — sometimes same day.</p></div>
+      </li>
+      <li>
+        <span class="num">02</span>
+        <div><h4>We Do the Heavy Lifting</h4><p>Point at it, we load it. You don't touch a thing.</p></div>
+      </li>
+      <li>
+        <span class="num">03</span>
+        <div><h4>Affordable Pricing</h4><p>Upfront quotes, priced by the load — no surprise fees.</p></div>
+      </li>
+      <li>
+        <span class="num">04</span>
+        <div><h4>Free Estimates</h4><p>Call or text a photo and we'll get you a number fast.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="hazard thin"></div>
+
+<section class="gallery-section" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Recent hauls</div>
+      <h2>Straight off<br>the job site.</h2>
+      <p>Real jobs, real trailers, real Southwest Georgia properties.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure class="g1"><img src="images/attic_before.jpg" alt="Cluttered attic before junk removal"><figcaption>Before &mdash; Attic Cleanout</figcaption></figure>
+      <figure class="g2"><img src="images/attic_after.jpg" alt="Clean, cleared attic after junk removal"><figcaption>After &mdash; Ready for Insulation</figcaption></figure>
+      <figure class="g3"><img src="images/trailer_lot1.jpg" alt="Dump trailer parked on job site"><figcaption>Loaded &amp; Staged</figcaption></figure>
+      <figure class="g4"><img src="images/maroon_truck.jpg" alt="Truck loaded with removed junk"><figcaption>Load Out</figcaption></figure>
+      <figure class="g5"><img src="images/trailer_road.jpg" alt="Dump trailer on the road for a haul"><figcaption>On the Road</figcaption></figure>
+      <figure class="g6"><img src="images/lot_yard.jpg" alt="SWGA Junk Removal trailers staged at the yard"><figcaption>Staged at the Yard</figcaption></figure>
+      <figure class="g7"><img src="images/trailer_lot2.jpg" alt="Trucks and trailers ready for the next job"><figcaption>Ready for the Next Call</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How it works</div>
+      <h2>Three steps.<br>Junk's gone.</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-card">
+        <span class="process-num">01</span>
+        <h3>Call or text</h3>
+        <p>Reach out to 229-205-7974 with what you need gone — send a photo if it's easier. We'll get you a free, no-pressure quote.</p>
+      </div>
+      <div class="process-card">
+        <span class="process-num">02</span>
+        <h3>We show up &amp; haul</h3>
+        <p>We roll in with the trailer, do all the lifting and loading, and clear it out — furniture, debris, whatever it is.</p>
+      </div>
+      <div class="process-card">
+        <span class="process-num">03</span>
+        <h3>You enjoy the space</h3>
+        <p>Swept up and cleared out. No mess left behind, no more junk taking up room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area-section" id="area">
+  <div class="wrap area-inner">
+    <div>
+      <div class="eyebrow">Service area</div>
+      <h2 style="font-size:clamp(30px,4vw,44px); color:var(--bone);">Covering Southwest Georgia</h2>
+      <p style="color:var(--bone-dim); margin-top:14px; font-size:17px;">Based locally and running trailers across the region. Don't see your town? Call anyway — we cover plenty of ground.</p>
+      <div class="county-list">
+        <span>Tifton</span><span>Moultrie</span><span>Ashburn</span><span>Sylvester</span>
+        <span>Valdosta</span><span>Albany</span><span>Fitzgerald</span><span>Adel</span>
+        <span>Surrounding Counties</span>
+      </div>
+    </div>
+    <div class="map-box">
+      <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <h3>Southwest Georgia</h3>
+      <p>Local crew, local trailers — quick turnaround for your area.</p>
+    </div>
+  </div>
+</section>
+
+<div class="hazard"></div>
+
+<section class="cta-section" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;">Free estimates &middot; No obligation</div>
+    <h2>Got junk?<br>We're on it.</h2>
+    <p>Call or text now and get a free quote today &mdash; most jobs cleared within days.</p>
+    <a href="tel:2292057974" class="cta-phone">229&ndash;205&ndash;7974</a>
+    <div class="cta-ctas">
+      <a href="tel:2292057974" class="btn-primary">Call Now</a>
+      <a href="sms:2292057974" class="btn-ghost">Text Us</a>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info" style="text-align:left;">
+        <h3>Get In Touch</h3>
+        <div class="info-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:2292057974">229-205-7974 (Call or Text)</a>
+        </div>
+        <div class="info-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <a href="mailto:tuckerlynn19@gmail.com">tuckerlynn19@gmail.com</a>
+        </div>
+        <div class="info-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <a href="https://www.facebook.com/profile.php?id=61590727144267" target="_blank" rel="noopener">Facebook: SWGA Junk Removal</a>
+        </div>
+        <div class="info-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Serving Southwest Georgia &amp; surrounding counties</span>
+        </div>
+      </div>
+
+      <div>
+        <form id="quote-form">
+          <div class="form-row">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+          <div>
+            <label for="service">What do you need hauled?</label>
+            <select id="service" name="service">
+              <option>Furniture Removal</option>
+              <option>Appliance Removal</option>
+              <option>Yard Debris</option>
+              <option>Construction Debris</option>
+              <option>Demolition</option>
+              <option>Full Property Cleanout</option>
+              <option>Post-Construction Cleanup</option>
+              <option>Not Sure / Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Tell us a bit more</label>
+            <textarea id="message" name="message" placeholder="What's it look like, where is it, and when do you need it gone?"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Request Free Quote</button>
+          <p class="form-note">Prefer to skip the form? Call or text 229-205-7974 &mdash; fastest way to reach us.</p>
+          <div class="form-success" id="form-success">Thanks &mdash; we got your request and will text or call you shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <a href="#top" class="footer-brand">
+        <img src="images/logo_badge.jpg" alt="SWGA Junk Removal logo">
+        <span class="brand-name" style="font-size:16px;">SWGA JUNK REMOVAL</span>
+      </a>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#gallery">Work</a>
+        <a href="#area">Service Area</a>
+        <a href="tel:2292057974">229-205-7974</a>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; 2026 SWGA Junk Removal &middot; Southwest Georgia &middot; Demo / Junk Removal / Cleanup</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('quote-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
